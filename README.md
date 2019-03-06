@@ -15,7 +15,7 @@ http://dariocavada.com/static/public/phaser3matterjsTest/
 In the following code I've have added `this.matter.add.mouseSpring();`
 but there are some problems. 
 
-If you try to drag orange it works, and even if you drag cherries inside the circles.
+If you try to drag the orange it works, and even if you drag the cherries inside the circles.
 
 (I've enabled the matterjs debug so the physics lines are drawn around objects ).
 
@@ -33,7 +33,7 @@ this.matter.add.mouseSpring();
 ### Test 02
 **Physics with texture packer.**
 
-Without using a shape, mouse dragging using matterjs works.
+Without using the shape option, mouse dragging using matterjs works.
 
 ```javascript
 this.matter.add.sprite(200, 50, 'sheet', 'crate');
