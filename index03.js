@@ -40,18 +40,30 @@ function create() {
     // sprites are positioned at their center of mass
     var ground = this.matter.add.sprite(0, 0, 'sheet', 'ground', {shape: shapes.ground});
     ground.setPosition(0 + ground.centerOfMass.x, 280 + ground.centerOfMass.y);  // corrected position: (0,280)
-
-    var mattersprites = { };
-    mattersprites.crate = this.matter.add.sprite(200, 50, 'sheet', 'crate');
-    mattersprites.banana = this.matter.add.sprite(250, 250, 'sheet', 'banana');
-    mattersprites.orange = this.matter.add.sprite(360, 50, 'sheet', 'orange');
-    mattersprites.cherries = this.matter.add.sprite(400, 250, 'sheet', 'cherries');
-
     
-    /*
-    this.input.on('pointerdown', function (pointer) {
-        this.matter.add.sprite(pointer.x, pointer.y, 'sheet', 'banana', {shape: shapes.banana});
-    }, this);*/
+    this.add.text(10, 10, 'Test 03');
+    
+    var mattersprites = { };
+    mattersprites.crate = this.matter.add.sprite(200, 50, 'sheet', 'crate', {shape: shapes.crate});
+    mattersprites.banana = this.matter.add.sprite(250, 250, 'sheet', 'banana', {shape: shapes.banana});
+    mattersprites.orange = this.matter.add.sprite(360, 50, 'sheet', 'orange', {shape: shapes.orange});
+    mattersprites.cherries = this.matter.add.sprite(400, 250, 'sheet', 'cherries', {shape: shapes.cherries});
 
-    //this.matter.add.mouseSpring();
+    mattersprites.crate.setInteractive();
+    this.input.setDraggable(mattersprites.crate);
+
+    mattersprites.banana.setInteractive();
+    this.input.setDraggable(mattersprites.banana);
+
+    mattersprites.orange.setInteractive();
+    this.input.setDraggable(mattersprites.orange);
+
+    mattersprites.cherries.setInteractive();
+    this.input.setDraggable(mattersprites.cherries);
+
+    this.input.on('drag', function (pointer, gameObject, dragX, dragY) {
+            gameObject.x = dragX;
+            gameObject.y = dragY;
+    });
+
 }

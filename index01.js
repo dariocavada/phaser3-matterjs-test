@@ -46,10 +46,5 @@ function create() {
     this.matter.add.sprite(360, 50, 'sheet', 'orange', {shape: shapes.orange});
     this.matter.add.sprite(400, 250, 'sheet', 'cherries', {shape: shapes.cherries});
 
-    /*
-    this.input.on('pointerdown', function (pointer) {
-        this.matter.add.sprite(pointer.x, pointer.y, 'sheet', 'banana', {shape: shapes.banana});
-    }, this);*/
-
     this.matter.add.mouseSpring();
 }
