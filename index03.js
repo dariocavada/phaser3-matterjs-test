@@ -47,6 +47,7 @@ function create() {
     mattersprites.orange = this.matter.add.sprite(360, 50, 'sheet', 'orange');
     mattersprites.cherries = this.matter.add.sprite(400, 250, 'sheet', 'cherries');
 
+    
     /*
     this.input.on('pointerdown', function (pointer) {
         this.matter.add.sprite(pointer.x, pointer.y, 'sheet', 'banana', {shape: shapes.banana});
